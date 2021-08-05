@@ -1,0 +1,63 @@
+@import 'base';
+
+.container {
+    display: grid;
+    place-items: center;
+
+    height: 100vh;
+}
+
+.loader {
+    position: relative;
+}
+
+/**
+ * loader-animation
+ */
+
+.loader-animation {
+    width: 200px;
+    height: 200px;
+    animation: loader 2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+
+    span {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        animation: borderEffect 2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+
+        &:nth-child(1) {
+            top: 0;
+            right: 0;
+            background: tomato;
+        }
+        &:nth-child(2) {
+            top: 0;
+            left: 0;
+            background: dodgerblue;
+        }
+        &:nth-child(3) {
+            bottom: 0;
+            left: 0;
+            background: burlywood;
+        }
+        &:nth-child(4) {
+            bottom: 0;
+            right: 0;
+            background: darkslategray;
+        }
+    }
+}
+
+@keyframes loader {
+    50% {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@keyframes borderEffect {
+    50% {
+        border-radius: 50%;
+    }
+}
